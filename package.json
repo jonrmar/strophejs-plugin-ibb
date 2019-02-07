@@ -1,0 +1,24 @@
+{
+  "name": "strophejs-plugin-ibb",
+  "version": "0.0.1",
+  "description": "",
+  "main": "strophe.ibb.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjcorrea/strophejs-plugin-ibb.git"
+  },
+  "keywords": [
+    "xmpp",
+    "ibb",
+    "strophe.js",
+    "strophe"
+  ],
+  "author": "The strophe plugin developers",
+  "license": "MIT",
+  "devDependencies": {
+  },
+  "peerDependencies": {
+    "strophe.js": "^1.2.12"
+  }
+}
