@@ -40,9 +40,9 @@
     },
 
     _receive: function (m) {
-      var $m = new window.DOMParser().parseFromString(m, "text/xml")
+      var $m = m;
       var from = $m.getAttribute('from');
-      var id = $m.getAttribute('id')
+      var id = $m.getAttribute('id');
 
       // support ibb?
       // proceed?
@@ -55,7 +55,7 @@
       });
       this._send(iq, noop, noop);
 
-      var child = $m.children().get(0);
+      var child = $m.childNodes[0];
       var type = child.tagName.toLowerCase();
       var sid = child.getAttribute('sid');
 
@@ -82,8 +82,7 @@
       var err = 'timed out';
       if (stanza) {
         err = stanza.querySelector('error')
-                .children()
-                .get(0)
+                .childNodes[0]
                 .tagName
                 .toLowerCase();
       }
