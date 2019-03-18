@@ -61,7 +61,7 @@
 
       var data, seq;
       if (type === 'data') {
-        data = child.nodeValue;
+        data = child.textContent;
         seq = child.getAttribute('seq');
       }
 
