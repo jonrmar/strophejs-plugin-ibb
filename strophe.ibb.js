@@ -40,10 +40,9 @@
     },
 
     _receive: function (m) {
-
-      var $m = $(m);
-      var from = $m.attr('from');
-      var id = $m.attr('id')
+      var $m = new window.DOMParser().parseFromString(m, "text/xml")
+      var from = $m.getAttribute('from');
+      var id = $m.getAttribute('id')
 
       // support ibb?
       // proceed?
@@ -58,12 +57,12 @@
 
       var child = $m.children().get(0);
       var type = child.tagName.toLowerCase();
-      var sid = $(child).attr('sid');
+      var sid = child.getAttribute('sid');
 
       var data, seq;
       if (type === 'data') {
-        data = $(child).text();
-        seq = $(child).attr('seq');
+        data = child.nodeValue;
+        seq = child.getAttribute('seq');
       }
 
       // callback message
@@ -82,7 +81,7 @@
     _fail: function (cb, stanza) {
       var err = 'timed out';
       if (stanza) {
-        err = $('error', stanza)
+        err = stanza.querySelector('error')
                 .children()
                 .get(0)
                 .tagName
