@@ -6,7 +6,7 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jjcorrea/strophejs-plugin-ibb.git"
+    "url": "git+https://github.com/jonrmar/strophejs-plugin-ibb.git"
   },
   "keywords": [
     "xmpp",
